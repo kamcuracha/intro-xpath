@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Introduction to XPath</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>How to enable dark mode on Facebook Messenger</h1>
+        </section>
+        <section>
+          <a href="https://www.youtube.com/watch?v=QGqqIIEb28k" target="_blank">🙃</a>
+        </section>
+        <section>
+          <h1>Introduction to XPath</h1>
+        </section>
+        <section>
+          <h2>What the (F) is XPath?</h2>
+          <ul>
+            <li class="fragment">XML Path Language</li>
+            <li class="fragment">XPath is a syntax for defining parts of an XML document</li>
+            <li class="fragment">XPath uses path expressions to navigate in XML documents</li>
+            <li class="fragment">XPath contains a library of standard functions</li>
+            <li class="fragment">XPath is a major element in XSLT and in XQuery</li>
+            <li class="fragment">XPath is a W3C recommendation</li>
+          </ul>
+        </section>
+        <section>
+          ...
+        </section>
+        <section>
+          <h2>Expressions</h2>
+          <ul>
+            <li class="fragment">A location path can be absolute or relative.  
+                <ul>
+                <li>Absolute <pre>/step1/step2/...</pre></li>
+                <li>Relative <pre>step1/step2/...</pre></li>
+              </ul>  
+            </li>
+            <li class="fragment">Consist of one or more steps</li>
+            <li class="fragment">Step anatomy<pre>axisname::nodetest[predicate]</pre></li>
+          </ul>
+        </section>
+        <section>
+          <a href="https://www.w3schools.com/xml/xpath_axes.asp" target="_blank">Axes</a>
+
+          <aside class="notes">
+            An axis is a relationship between nodes. (Wayyyyy beyond the scope of this talk)
+          </aside>
+        </section>
+        <section>
+          <h2>Nodes</h2>
+          <p>Each node represents part of a document</p>
+          <ul>
+            <li class="fragment">Root</li>
+            <li class="fragment">Element</li>
+            <li class="fragment">Attribute</li>
+            <li class="fragment">Text</li>
+            <li class="fragment">Comment</li>
+            <li class="fragment">Processing instuction (*) </li>
+            <li class="fragment">Namespace</li>
+          </ul>
+          <aside class="notes">
+            Processing instuction is intended to carry instructions to the application, mainly for SGML and XML.
+            Use case: stylesheet
+          </aside>
+        </section>
+        <section>
+          <h2>Reference Markup</h2>
+          <a href="https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_band&stacked=h" target="_blank">The Band</a>
+        </section>
+        <section>
+          <h3>Root</h3>
+          <img src="/lib/images/xpath-01.png" alt="">
+        </section>
+        <section class="stack">
+          <section>
+            <h3>Element</h3>
+            <img src="/lib/images/xpath-02a.png" alt="">
+          </section>
+          <section>
+            <img src="/lib/images/xpath-02b.png" alt="">
+          </section>
+        </section>
+        <section class="stack">
+          <section>
+            <h3>Attribute</h3>
+            <img src="/lib/images/xpath-03a.png" alt="">
+          </section>
+          <section>
+            <img src="/lib/images/xpath-03b.png" alt="">
+          </section>
+        </section>
+        <section class="stack">
+          <section>
+            <h3>Text</h3>
+            <img src="/lib/images/xpath-04a.png" alt="">
+          </section>
+          <section>
+            <img src="/lib/images/xpath-04b.png" alt="">
+          </section>
+        </section>
+        <section>
+          <h3>Comment</h3>
+          <img src="/lib/images/xpath-05.png" alt="">
+        </section>
+        <section>
+          <h3>Processing instuction</h3>
+          <pre><code>< ?xml-stylesheet type="text/css" href="style.css"? >
+          </code></pre>
+
+          <aside class="notes">
+            Processing instuction is intended to carry instructions to the application, mainly for SGML and XML.
+            Use case: stylesheet
+          </aside>
+        </section>
+        <section>
+          <h3>Namespace</h3>
+          <img src="/lib/images/xpath-07.png" alt="">
+        </section>
+				<section>
+          <h2>Selecting nodes</h2>
+          <table style="width: 100vw; margin-left: -15vw;">
+            <tbody>
+              <tr>
+                <th>Expression</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td><i>nodename</i></td>
+                <td>Selects all nodes with the name "<i>nodename</i>"</td>
+              </tr>
+              <tr>
+                <td>/</td>
+                <td>Selects from the root node</td>
+              </tr>
+              <tr>
+                <td>//</td>
+                <td>Selects nodes in the document from the current node that match the selection no matter where they
+                  are </td>
+              </tr>
+              <tr>
+                <td>.</td>
+                <td>Selects the current node</td>
+              </tr>
+              <tr>
+                <td>..</td>
+                <td>Selects the parent of the current node</td>
+              </tr>
+              <tr>
+                <td>@</td>
+                <td>Selects attributes</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <h2>Predicates</h2>
+          <ul>
+            <li class="fragment">Find a specific node or a node that contains a specific value</li>
+            <li class="fragment">Always embedded in square brackets
+              <ul>
+                <li class="fragment">//div[@class='w3-top']</li>
+                <li class="fragment">//div[contains(@class, 'w3-top')]</li>
+                <li class="fragment">//div[@class='w3-top']//a[1]</li>
+                <li class="fragment">//div[@class='w3-top']/div[contains(@class, "w3-bar")]/a[last()-1]</li>
+                <li class="fragment">//*[@id='ticketModal' and contains(@style, "block")]</li>
+              </ul>
+            </li>
+          </ul>
+
+          <aside class="notes">
+            Example two is true even if the className is w3-top1 or 1w3-top
+          </aside>
+        </section>
+        <section>
+          <h2>Exercise</h2>
+          <a href="http://learn.onion.net/language=en/35426/w3c-xpath" target="_blank">W3C XPath exercises</a>
+
+          <aside class="notes">
+            ...
+          </aside>
+        </section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
